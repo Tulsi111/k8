@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  selector:
+    app: my-app
+  ports:
+  - port: 80          # service port
+    targetPort: 80    # container port
+    nodePort: 30007   # 👈 your custom port (range: 30000–32767)
+  type: NodePort
